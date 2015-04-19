@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Servlet</title>
+</head>
+	<style>
+		body {
+			font-size: 14px;
+			font-family: calibri;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		function carga() {
+			alert("bienvenido");
+			document.getElementById("tipo").focus();
+		}
+		
+		function valideDatos() {
+			var tipo=document.getElementById("tipo");
+			var matricula=document.getElementById("matricula");
+			if ((tipo.value == "" || tipo.value == '' || tipo.value == null) && 
+					(matricula.value == "" || matricula.value == '' || matricula.value == null)) {
+					alert("Ingresa tipo y matrícula");
+					tipo.focus();
+					return false;
+			} 
+			else if (tipo.value == "" || tipo.value == '' || tipo.value == null) {
+					alert("Ingresa tipo de vehículo");
+					tipo.focus();
+					return false;
+			} 
+			else if (matricula.value == "" || matricula.value == '' || matricula.value == null) {
+					alert("Ingresa número de matricula");
+					matricula.focus();
+					return false;
+			} 
+			else {
+					return true;
+			}
+		}
+	</script>
+<body onload="carga();">
+	<h2 align="center">Mi primera aplicación web en Java</h2>
+	<table align="center">
+		<form action="login.jr" method="GET" onsubmit="return valideDatos()">
+			<tr>
+				<td>Introduce tipo: </td>
+				<td><input type="text" name="tipo" id="tipo" placeholder="Introduce tipo"/></td>
+			</tr>
+			<tr>
+				<td>Introduce la Matricula: </td>
+				<td><input type="text" name="matricula" id="matricula" placeholder="Introduce matricula"/></td>
+			</tr>
+			<tr><td colspan='2' align="center">
+					</br><input type="button" value="Cancelar" />
+					<input type="submit" value="Aceptar" />
+				</td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>
+
